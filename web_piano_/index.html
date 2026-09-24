@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<style type="text/css">
+		html {
+		  box-sizing: border-box;
+		}
+		body {
+			background-image: url("assets_/images_/bg.gif");
+			background-attachment: fixed;
+			background-size: cover;
+			background-position: center;
+		}
+
+		*, *::before, *::after {
+		  box-sizing: inherit;
+		}
+
+		#piano {
+		  background-color: rgba(10,10,10,0.5);
+		  width: 992px;
+		  height: 290px;
+		  margin: 80px auto;
+		  padding: 90px 20px 0 20px;
+		  position: relative;
+		  border-radius: 10px;
+		}
+
+		.keys {
+		  background-color: #040404;
+		  width: 949px;
+		  height: 180px;
+		  padding-left: 2px;
+		  overflow: hidden;
+		}
+
+		.key {
+		  background-color: #ffffff;
+		  position: relative;
+		  width: 41px;
+		  height: 175px;
+		  margin: 2px;
+		  float: left;
+		  border-radius: 0 0 3px 3px;
+		}
+		.key:hover {
+		  background-color: rgba(128, 0, 128, 1);
+		}
+
+		.key.black--key::after {
+		  background-color: #1d1e22;
+		  content: "";
+		  position: absolute;
+		  left: -18px;
+		  width: 32px;
+		  height: 100px;
+		  border-radius: 0 0 3px 3px;
+		}
+
+		.logo {
+		  width: 300px;
+		  position: absolute;
+		  top: 23px;
+		}
+
+		@media (max-width: 768px) {
+		  #piano {
+		    width: 358px;
+		  }
+
+		  .keys {
+		    width: 318px;
+		  }
+
+		  .logo {
+		    width: 150px;
+		  }
+		}
+
+		@media (max-width: 1199px) and (min-width: 769px) {
+			  .keys{
+			    width: 633px;
+			  }
+			  #piano {
+			    width: 675px;
+			  }
+		}
+	</style>
+    <meta charset="UTF-8" />
+    <title>Piano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="piano">
+      <img class="logo" src="assets_/images_/ari.png" alt="freeCodeCamp Logo" />
+      <div class="keys">
+        <div class="key" id="key1"></div>
+        <div class="key black--key"  id="key2"></div>
+        <div class="key black--key" id="key3"></div>
+        <div class="key" id="key4"></div>
+        <div class="key black--key" id="key5"></div>
+        <div class="key black--key" id="key6"></div>
+        <div class="key black--key" id="key7"></div>
+
+        <div class="key" id="key8"></div>
+        <div class="key black--key"  id="key9"></div>
+        <div class="key black--key" id="key10"></div>
+        <div class="key" id="key11"></div>
+        <div class="key black--key" id="key12"></div>
+        <div class="key black--key" id="key13"></div>
+        <div class="key black--key" id="key14"></div>
+
+        <div class="key" id="key15"></div>
+        <div class="key black--key"  id="key16"></div>
+        <div class="key black--key" id="key17"></div>
+        <div class="key" id="key18"></div>
+        <div class="key black--key" id="key19"></div>
+        <div class="key black--key"  id="key20"></div>
+        <div class="key black--key" id="key21"></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+		window.addEventListener('load',function(){
+	    	var a = [];
+	    	for(let i=1;i<=21;i++){
+	    		a.push(document.getElementById(`key${i}`));
+	    		a[i-1].addEventListener('click',function(){
+				    var audio = new Audio(`assets_audio_/${i}.mp3`);
+	    			audio.play();
+	    		});
+    		}
+    	});
+
+    </script>
+  </body>
+</html>
+
+
